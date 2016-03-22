@@ -2,6 +2,8 @@
 
 This module exposes metrics in a [text/event-stream](https://developer.mozilla.org/en-US/docs/Server-sent_events/Using_server-sent_events) formatted stream, using a [Vertx](http://vertx.io/) HttpServer, that continues as long as a client holds the connection.
 
+`Important Note: This module requires JDK 8!`
+
 This modules let you embed the HttpServer in any application, doesn't matter if is a Java SE desktop, even command line application, doesn't need a servlet container, is extremely efficient and easy to deploy, using little memory and like 3 threads. 
 
 Each HystrixCommand instance will emit data such as this (without line breaks):

@@ -1,0 +1,204 @@
+{
+    "compile": {
+        "com.netflix.hystrix:hystrix-core": {
+            "locked": "1.5.1"
+        },
+        "io.vertx:vertx-core": {
+            "locked": "3.2.1"
+        },
+        "io.vertx:vertx-unit": {
+            "locked": "3.2.1"
+        },
+        "io.vertx:vertx-web": {
+            "locked": "3.2.1"
+        },
+        "org.codehaus.jackson:jackson-core-asl": {
+            "locked": "1.9.11"
+        },
+        "org.codehaus.jackson:jackson-mapper-asl": {
+            "locked": "1.9.11"
+        }
+    },
+    "compileClasspath": {
+        "com.netflix.hystrix:hystrix-core": {
+            "locked": "1.5.1"
+        },
+        "io.vertx:vertx-core": {
+            "locked": "3.2.1"
+        },
+        "io.vertx:vertx-unit": {
+            "locked": "3.2.1"
+        },
+        "io.vertx:vertx-web": {
+            "locked": "3.2.1"
+        },
+        "org.codehaus.jackson:jackson-core-asl": {
+            "locked": "1.9.11"
+        },
+        "org.codehaus.jackson:jackson-mapper-asl": {
+            "locked": "1.9.11"
+        }
+    },
+    "compileOnly": {
+        "com.netflix.hystrix:hystrix-core": {
+            "locked": "1.5.1"
+        },
+        "io.vertx:vertx-core": {
+            "locked": "3.2.1"
+        },
+        "io.vertx:vertx-unit": {
+            "locked": "3.2.1"
+        },
+        "io.vertx:vertx-web": {
+            "locked": "3.2.1"
+        },
+        "org.codehaus.jackson:jackson-core-asl": {
+            "locked": "1.9.11"
+        },
+        "org.codehaus.jackson:jackson-mapper-asl": {
+            "locked": "1.9.11"
+        }
+    },
+    "default": {
+        "com.netflix.hystrix:hystrix-core": {
+            "locked": "1.5.1"
+        },
+        "io.vertx:vertx-core": {
+            "locked": "3.2.1"
+        },
+        "io.vertx:vertx-unit": {
+            "locked": "3.2.1"
+        },
+        "io.vertx:vertx-web": {
+            "locked": "3.2.1"
+        },
+        "org.codehaus.jackson:jackson-core-asl": {
+            "locked": "1.9.11"
+        },
+        "org.codehaus.jackson:jackson-mapper-asl": {
+            "locked": "1.9.11"
+        }
+    },
+    "findbugs": {
+        "com.google.code.findbugs:findbugs": {
+            "locked": "3.0.1"
+        }
+    },
+    "pmd": {
+        "net.sourceforge.pmd:pmd-java": {
+            "locked": "5.2.3"
+        }
+    },
+    "runtime": {
+        "com.netflix.hystrix:hystrix-core": {
+            "locked": "1.5.1"
+        },
+        "io.vertx:vertx-core": {
+            "locked": "3.2.1"
+        },
+        "io.vertx:vertx-unit": {
+            "locked": "3.2.1"
+        },
+        "io.vertx:vertx-web": {
+            "locked": "3.2.1"
+        },
+        "org.codehaus.jackson:jackson-core-asl": {
+            "locked": "1.9.11"
+        },
+        "org.codehaus.jackson:jackson-mapper-asl": {
+            "locked": "1.9.11"
+        }
+    },
+    "testCompile": {
+        "com.netflix.hystrix:hystrix-core": {
+            "locked": "1.5.1"
+        },
+        "io.vertx:vertx-core": {
+            "locked": "3.2.1"
+        },
+        "io.vertx:vertx-unit": {
+            "locked": "3.2.1"
+        },
+        "io.vertx:vertx-web": {
+            "locked": "3.2.1"
+        },
+        "junit:junit": {
+            "locked": "4.12"
+        },
+        "org.codehaus.jackson:jackson-core-asl": {
+            "locked": "1.9.11"
+        },
+        "org.codehaus.jackson:jackson-mapper-asl": {
+            "locked": "1.9.11"
+        }
+    },
+    "testCompileClasspath": {
+        "com.netflix.hystrix:hystrix-core": {
+            "locked": "1.5.1"
+        },
+        "io.vertx:vertx-core": {
+            "locked": "3.2.1"
+        },
+        "io.vertx:vertx-unit": {
+            "locked": "3.2.1"
+        },
+        "io.vertx:vertx-web": {
+            "locked": "3.2.1"
+        },
+        "junit:junit": {
+            "locked": "4.12"
+        },
+        "org.codehaus.jackson:jackson-core-asl": {
+            "locked": "1.9.11"
+        },
+        "org.codehaus.jackson:jackson-mapper-asl": {
+            "locked": "1.9.11"
+        }
+    },
+    "testCompileOnly": {
+        "com.netflix.hystrix:hystrix-core": {
+            "locked": "1.5.1"
+        },
+        "io.vertx:vertx-core": {
+            "locked": "3.2.1"
+        },
+        "io.vertx:vertx-unit": {
+            "locked": "3.2.1"
+        },
+        "io.vertx:vertx-web": {
+            "locked": "3.2.1"
+        },
+        "junit:junit": {
+            "locked": "4.12"
+        },
+        "org.codehaus.jackson:jackson-core-asl": {
+            "locked": "1.9.11"
+        },
+        "org.codehaus.jackson:jackson-mapper-asl": {
+            "locked": "1.9.11"
+        }
+    },
+    "testRuntime": {
+        "com.netflix.hystrix:hystrix-core": {
+            "locked": "1.5.1"
+        },
+        "io.vertx:vertx-core": {
+            "locked": "3.2.1"
+        },
+        "io.vertx:vertx-unit": {
+            "locked": "3.2.1"
+        },
+        "io.vertx:vertx-web": {
+            "locked": "3.2.1"
+        },
+        "junit:junit": {
+            "locked": "4.12"
+        },
+        "org.codehaus.jackson:jackson-core-asl": {
+            "locked": "1.9.11"
+        },
+        "org.codehaus.jackson:jackson-mapper-asl": {
+            "locked": "1.9.11"
+        }
+    }
+}

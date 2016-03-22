@@ -1,0 +1,112 @@
+buildscript {
+    repositories { jcenter() }
+    dependencies {
+        classpath 'com.bmuschko:gradle-nexus-plugin:2.3.1'
+    }
+}
+
+plugins {
+    id 'nebula.dependency-recommender' version '3.1.0'
+    id 'nebula.dependency-lock' version '4.2.0'
+    id 'nebula.nebula-release' version '4.0.1'
+    id 'nebula.contacts' version '3.0.1'
+    id 'nebula.info' version '3.0.3'
+}
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'com.bmuschko.nexus'
+
+// QA plugins
+apply plugin: 'pmd'
+apply plugin: 'findbugs'
+apply plugin: 'build-dashboard'
+
+group 'com.github.kennedyoliveira'
+
+def recomendationsFile = rootProject.file('dependencies-version.properties')
+
+dependencyRecommendations {
+    propertiesFile file: recomendationsFile
+}
+
+repositories {
+    mavenCentral()
+}
+
+contacts {
+    'kennedy.oliveira@outlook.com' {
+        name 'Kennedy Oliveira'
+        roles 'owner', 'developer'
+    }
+}
+
+dependencies {
+    compile 'com.netflix.hystrix:hystrix-core'
+    compile 'com.netflix.hystrix:hystrix-core'
+    compile 'org.codehaus.jackson:jackson-core-asl'
+    compile 'org.codehaus.jackson:jackson-mapper-asl'
+
+    compile group: 'io.vertx', name: 'vertx-core'
+    compile group: 'io.vertx', name: 'vertx-web'
+    compile group: 'io.vertx', name: 'vertx-unit'
+
+    testCompile 'junit:junit'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.12'
+}
+
+// qa plugin configuration to export html instead of xml
+tasks.withType(FindBugs) {
+    reports {
+        html.enabled = true
+        xml.enabled = false
+    }
+}
+
+tasks.withType(Pmd) {
+    reports {
+        html.enabled = true
+        xml.enabled = false
+    }
+}
+
+modifyPom {
+    project {
+        name 'Hystrix Vert.X Metrics Events Stream'
+        description 'Implementation of a Metrics Event Stream using Vert.x'
+        url 'https://github.com/kennedyoliveira/hystrix-vertx-metrics-stream'
+        inceptionYear '2016'
+
+        scm {
+            url 'https://github.com/kennedyoliveira/hystrix-vertx-metrics-stream'
+            connection 'scm:https://kennedyoliveira@github.com/kennedyoliveira/hystrix-vertx-metrics-stream.git'
+            developerConnection 'scm:git://github.com/kennedyoliveira/hystrix-vertx-metrics-stream.git'
+        }
+
+        developers {
+            developer {
+                id 'kennedyoliveira'
+                name 'Kennedy Oliveira'
+                email 'kennedy.oliveira@outlook.com'
+                roles {
+                    role 'administrator'
+                    role 'developer'
+                    role 'owner'
+                }
+            }
+        }
+    }
+}
+
+nexus {
+    sign = true
+}
+
+extraArchive {
+    tests = false
+    sources = true
+    javadoc = true
+}
