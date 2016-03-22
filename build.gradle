@@ -1,7 +1,7 @@
 buildscript {
     repositories { jcenter() }
     dependencies {
-        classpath 'com.bmuschko:gradle-nexus-plugin:2.3.1'
+        classpath 'com.netflix.nebula:nebula-publishing-plugin:4.4.4'
     }
 }
 
@@ -11,11 +11,15 @@ plugins {
     id 'nebula.nebula-release' version '4.0.1'
     id 'nebula.contacts' version '3.0.1'
     id 'nebula.info' version '3.0.3'
+    id 'nebula.nebula-bintray' version '3.3.4'
 }
 
 apply plugin: 'java'
-apply plugin: 'maven'
-apply plugin: 'com.bmuschko.nexus'
+apply plugin: 'nebula.maven-publish'
+apply plugin: 'nebula.nebula-bintray-publishing'
+apply plugin: 'nebula.source-jar'
+apply plugin: 'nebula.javadoc-jar'
+apply plugin: 'nebula.info'
 
 // QA plugins
 apply plugin: 'pmd'
@@ -23,6 +27,7 @@ apply plugin: 'findbugs'
 apply plugin: 'build-dashboard'
 
 group 'com.github.kennedyoliveira'
+description = 'Implementation of a Metrics Event Stream using Vert.x'
 
 def recomendationsFile = rootProject.file('dependencies-version.properties')
 
@@ -36,8 +41,9 @@ repositories {
 
 contacts {
     'kennedy.oliveira@outlook.com' {
-        name 'Kennedy Oliveira'
-        roles 'owner', 'developer'
+        moniker 'Kennedy Oliveira'
+        github 'kennedyoliveira'
+        roles 'owner', 'developer', 'notify'
     }
 }
 
@@ -73,48 +79,40 @@ tasks.withType(Pmd) {
     }
 }
 
-modifyPom {
-    project {
-        name 'Hystrix Vert.X Metrics Events Stream'
-        description 'Implementation of a Metrics Event Stream using Vert.x'
-        url 'https://github.com/kennedyoliveira/hystrix-vertx-metrics-stream'
-        inceptionYear '2016'
-
-        scm {
-            url 'https://github.com/kennedyoliveira/hystrix-vertx-metrics-stream'
-            connection 'scm:https://kennedyoliveira@github.com/kennedyoliveira/hystrix-vertx-metrics-stream.git'
-            developerConnection 'scm:git://github.com/kennedyoliveira/hystrix-vertx-metrics-stream.git'
-        }
-
-        licenses {
-            license {
-                name 'MIT License'
-                url 'https://opensource.org/licenses/MIT'
-                distribution 'repo'
-            }
-        }
-
-        developers {
-            developer {
-                id 'kennedyoliveira'
-                name 'Kennedy Oliveira'
-                email 'kennedy.oliveira@outlook.com'
-                roles {
-                    role 'administrator'
-                    role 'developer'
-                    role 'owner'
+publishing {
+    publications {
+        nebula(MavenPublication) {
+            pom.withXml {
+                asNode().appendNode('licenses').appendNode('license').with {
+                    appendNode('name', 'MIT License')
+                    appendNode('url', 'https://opensource.org/licenses/MIT')
+                    appendNode('distribution', 'repo')
                 }
             }
         }
     }
 }
 
-nexus {
-    sign = true
-}
-
-extraArchive {
-    tests = false
-    sources = true
-    javadoc = true
+bintray {
+    publications = ['nebula']
+    dryRun = false
+    publish = true
+    pkg {
+        repo = 'hystrix-vertx-metrics-stream'
+        userOrg = 'nebula'
+        name = 'hystrix-vertx-metrics-stream'
+        desc = project.description
+        websiteUrl = 'https://github.com/kennedyoliveira/hystrix-vertx-metrics-stream'
+        issueTrackerUrl = 'https://github.com/kennedyoliveira/hystrix-vertx-metrics-stream/issues'
+        vcsUrl = 'https://github.com/kennedyoliveira/hystrix-vertx-metrics-stream.git'
+        licenses = ['MIT']
+        labels = ['gradle', 'hyxtrix', 'vertx3', 'metrics-stream']
+        publicDownloadNumbers = true
+        attributes = [:]
+        version {
+            name = project.version
+            vcsTag = project.version
+            attributes = [:]
+        }
+    }
 }
