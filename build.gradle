@@ -95,7 +95,7 @@ publishing {
 
 bintray {
     pkg {
-        repo = 'hystrix-vertx-metrics-stream'
+        repo = 'maven'
         userOrg = ''
         licenses = ['MIT']
         websiteUrl = 'https://github.com/kennedyoliveira/hystrix-vertx-metrics-stream'
