@@ -86,6 +86,14 @@ modifyPom {
             developerConnection 'scm:git://github.com/kennedyoliveira/hystrix-vertx-metrics-stream.git'
         }
 
+        licenses {
+            license {
+                name 'MIT License'
+                url 'https://opensource.org/licenses/MIT'
+                distribution 'repo'
+            }
+        }
+
         developers {
             developer {
                 id 'kennedyoliveira'
