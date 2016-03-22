@@ -103,8 +103,10 @@ bintray {
         vcsUrl = 'https://github.com/kennedyoliveira/hystrix-vertx-metrics-stream.git'
         labels = ['gradle', 'hyxtrix', 'vertx3', 'metrics-stream']
         publicDownloadNumbers = true
-        gpg {
-            passphrase = project.property('bintraySignPass')
+        version {
+            gpg {
+                passphrase = project.property('bintraySignPass')
+            }
         }
     }
 }
