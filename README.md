@@ -1,5 +1,9 @@
 # hystrix-vertx-metrics-stream
 
+[![Build Status](https://travis-ci.org/kennedyoliveira/hystrix-vertx-metrics-stream.svg?branch=master)](https://travis-ci.org/kennedyoliveira/hystrix-vertx-metrics-stream)
+[![Dependency Status](https://www.versioneye.com/user/projects/56f0d26335630e0029daff48/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56f0d26335630e0029daff48)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/a4794a6610254ad8b045bc15405c6bf7)](https://www.codacy.com/app/kennedy-oliveira/hystrix-vertx-metrics-stream)
+
 This module exposes metrics in a [text/event-stream](https://developer.mozilla.org/en-US/docs/Server-sent_events/Using_server-sent_events) formatted stream, using a [Vertx](http://vertx.io/) HttpServer, that continues as long as a client holds the connection.
 
 `Important Note: This module requires JDK 8!`

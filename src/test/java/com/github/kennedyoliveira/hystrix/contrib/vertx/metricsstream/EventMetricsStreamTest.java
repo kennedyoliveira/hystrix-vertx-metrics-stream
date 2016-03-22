@@ -21,7 +21,7 @@ import java.nio.charset.StandardCharsets;
 @RunWith(VertxUnitRunner.class)
 public class EventMetricsStreamTest {
 
-  Vertx vertx;
+  private Vertx vertx;
 
   @Before
   public void setUp(TestContext context) throws Exception {
