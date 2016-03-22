@@ -94,25 +94,14 @@ publishing {
 }
 
 bintray {
-    publications = ['nebula']
-    dryRun = false
-    publish = true
     pkg {
         repo = 'hystrix-vertx-metrics-stream'
-        userOrg = 'nebula'
-        name = 'hystrix-vertx-metrics-stream'
-        desc = project.description
+        userOrg = ''
+        licenses = ['MIT']
         websiteUrl = 'https://github.com/kennedyoliveira/hystrix-vertx-metrics-stream'
         issueTrackerUrl = 'https://github.com/kennedyoliveira/hystrix-vertx-metrics-stream/issues'
         vcsUrl = 'https://github.com/kennedyoliveira/hystrix-vertx-metrics-stream.git'
-        licenses = ['MIT']
         labels = ['gradle', 'hyxtrix', 'vertx3', 'metrics-stream']
         publicDownloadNumbers = true
-        attributes = [:]
-        version {
-            name = project.version
-            vcsTag = project.version
-            attributes = [:]
-        }
     }
 }
