@@ -105,7 +105,8 @@ bintray {
         publicDownloadNumbers = true
         version {
             gpg {
-                passphrase = project.property('bintraySignPass')
+                if (project.hasProperty('bintraySignPass'))
+                    passphrase = project.property('bintraySignPass')
             }
         }
     }
