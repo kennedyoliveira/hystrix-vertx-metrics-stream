@@ -137,7 +137,7 @@ Just use a vert-instance that you wanna, example:
 Vertx vertx = //... your instance
 
 // deploy using full qualified class name
-vertx.deployVerticle("com.netflix.hystrix.contrib.vertx.metricsstream.EventMetricsStreamVerticle",
+vertx.deployVerticle("com.github.kennedyoliveira.hystrix.contrib.vertx.metricsstream.EventMetricsStreamVerticle",
                      result -> {
                        if (result.succed) {
                         // success!
@@ -173,7 +173,7 @@ final DeploymentOptions deploymentOptions = new DeploymentOptions().setInstances
 
 // Deploy our verticle with the configurated deployment settings in the 
 // configurated vertx instance
-vertx.deployVerticle("com.netflix.hystrix.contrib.vertx.metricsstream.EventMetricsStreamVerticle",
+vertx.deployVerticle("com.github.kennedyoliveira.hystrix.contrib.vertx.metricsstream.EventMetricsStreamVerticle",
                      deploymentOptions,
                      result -> {
                        if (result.succed) {
