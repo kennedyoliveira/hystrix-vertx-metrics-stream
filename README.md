@@ -3,10 +3,15 @@
 [![Build Status](https://travis-ci.org/kennedyoliveira/hystrix-vertx-metrics-stream.svg?branch=master)](https://travis-ci.org/kennedyoliveira/hystrix-vertx-metrics-stream)
 [![Dependency Status](https://www.versioneye.com/user/projects/56f0d26335630e0029daff48/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56f0d26335630e0029daff48)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/a4794a6610254ad8b045bc15405c6bf7)](https://www.codacy.com/app/kennedy-oliveira/hystrix-vertx-metrics-stream)
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.kennedyoliveira/hystrix-vertx-metrics-stream.svg)]()
+[ ![Download](https://api.bintray.com/packages/kennedyoliveira/maven/hystrix-vertx-metrics-stream/images/download.svg) ](https://bintray.com/kennedyoliveira/maven/hystrix-vertx-metrics-stream/_latestVersion)
+
 
 This module exposes metrics in a [text/event-stream](https://developer.mozilla.org/en-US/docs/Server-sent_events/Using_server-sent_events) formatted stream, using a [Vertx](http://vertx.io/) HttpServer, that continues as long as a client holds the connection.
 
 `Important Note: This module requires JDK 8!`
+
+`Note: I'll try to keep the project release with the same version as Hystrix project to make it easy to maintain their dependencies`
 
 This modules let you embed the HttpServer in any application, doesn't matter if is a Java SE desktop, even command line application, doesn't need a servlet container, is extremely efficient and easy to deploy, using little memory and like 3 threads. 
 
@@ -112,6 +117,24 @@ data:
 # Setup
 
 First include `hystrix-vertx-metrics-stream-*.jar` in your classpath.
+
+You can get from maven central or bintray, the links are in the badges at top of this readme.
+
+for maven:
+
+```xml
+<dependency>
+  <groupId>com.github.kennedyoliveira</groupId>
+  <artifactId>hystrix-vertx-metrics-stream</artifactId>
+  <version>1.5.1</version>
+</dependency>
+```
+
+for gradle: 
+```
+compile 'com.github.kennedyoliveira:hystrix-vertx-metrics-stream:1.5.1' 
+```
+
 Then you have some ways for deploying.
 
 1) Don't know anything about Vertx? No problem!
