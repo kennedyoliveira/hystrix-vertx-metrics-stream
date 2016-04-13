@@ -1,12 +1,9 @@
 {
     "compile": {
         "com.netflix.hystrix:hystrix-core": {
-            "locked": "1.5.1"
+            "locked": "1.5.2"
         },
         "io.vertx:vertx-core": {
-            "locked": "3.2.1"
-        },
-        "io.vertx:vertx-unit": {
             "locked": "3.2.1"
         },
         "io.vertx:vertx-web": {
@@ -21,12 +18,9 @@
     },
     "compileClasspath": {
         "com.netflix.hystrix:hystrix-core": {
-            "locked": "1.5.1"
+            "locked": "1.5.2"
         },
         "io.vertx:vertx-core": {
-            "locked": "3.2.1"
-        },
-        "io.vertx:vertx-unit": {
             "locked": "3.2.1"
         },
         "io.vertx:vertx-web": {
@@ -41,12 +35,9 @@
     },
     "compileOnly": {
         "com.netflix.hystrix:hystrix-core": {
-            "locked": "1.5.1"
+            "locked": "1.5.2"
         },
         "io.vertx:vertx-core": {
-            "locked": "3.2.1"
-        },
-        "io.vertx:vertx-unit": {
             "locked": "3.2.1"
         },
         "io.vertx:vertx-web": {
@@ -61,12 +52,9 @@
     },
     "default": {
         "com.netflix.hystrix:hystrix-core": {
-            "locked": "1.5.1"
+            "locked": "1.5.2"
         },
         "io.vertx:vertx-core": {
-            "locked": "3.2.1"
-        },
-        "io.vertx:vertx-unit": {
             "locked": "3.2.1"
         },
         "io.vertx:vertx-web": {
@@ -91,12 +79,9 @@
     },
     "runtime": {
         "com.netflix.hystrix:hystrix-core": {
-            "locked": "1.5.1"
+            "locked": "1.5.2"
         },
         "io.vertx:vertx-core": {
-            "locked": "3.2.1"
-        },
-        "io.vertx:vertx-unit": {
             "locked": "3.2.1"
         },
         "io.vertx:vertx-web": {
@@ -111,7 +96,7 @@
     },
     "testCompile": {
         "com.netflix.hystrix:hystrix-core": {
-            "locked": "1.5.1"
+            "locked": "1.5.2"
         },
         "io.vertx:vertx-core": {
             "locked": "3.2.1"
@@ -134,7 +119,7 @@
     },
     "testCompileClasspath": {
         "com.netflix.hystrix:hystrix-core": {
-            "locked": "1.5.1"
+            "locked": "1.5.2"
         },
         "io.vertx:vertx-core": {
             "locked": "3.2.1"
@@ -157,7 +142,7 @@
     },
     "testCompileOnly": {
         "com.netflix.hystrix:hystrix-core": {
-            "locked": "1.5.1"
+            "locked": "1.5.2"
         },
         "io.vertx:vertx-core": {
             "locked": "3.2.1"
@@ -180,7 +165,7 @@
     },
     "testRuntime": {
         "com.netflix.hystrix:hystrix-core": {
-            "locked": "1.5.1"
+            "locked": "1.5.2"
         },
         "io.vertx:vertx-core": {
             "locked": "3.2.1"
