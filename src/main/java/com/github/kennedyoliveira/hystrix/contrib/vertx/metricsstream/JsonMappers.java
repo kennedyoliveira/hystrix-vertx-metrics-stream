@@ -174,12 +174,7 @@ class JsonMappers {
     json.writeNumberField("currentTaskCount", threadPoolMetrics.getCurrentTaskCount().longValue());
     json.writeNumberField("rollingCountThreadsExecuted", threadPoolMetrics.getRollingCountThreadsExecuted());
     json.writeNumberField("rollingMaxActiveThreads", threadPoolMetrics.getRollingMaxActiveThreads());
-    safelyWriteNumberField(json, "rollingCountCommandsRejected", new Func0<Long>() {
-      @Override
-      public Long call() {
-        return threadPoolMetrics.getRollingCount(HystrixRollingNumberEvent.THREAD_POOL_REJECTED);
-      }
-    });
+    safelyWriteNumberField(json, "rollingCountCommandsRejected", () -> threadPoolMetrics.getRollingCount(HystrixRollingNumberEvent.THREAD_POOL_REJECTED));
     json.writeNumberField("propertyValue_queueSizeRejectionThreshold", threadPoolMetrics.getProperties().queueSizeRejectionThreshold().get());
     json.writeNumberField("propertyValue_metricsRollingStatisticalWindowInMilliseconds", threadPoolMetrics.getProperties().metricsRollingStatisticalWindowInMilliseconds().get());
 
@@ -201,24 +196,9 @@ class JsonMappers {
     json.writeStringField("name", key.name());
     json.writeNumberField("currentTime", System.currentTimeMillis());
 
-    safelyWriteNumberField(json, "rollingCountRequestsBatched", new Func0<Long>() {
-      @Override
-      public Long call() {
-        return collapserMetrics.getRollingCount(HystrixRollingNumberEvent.COLLAPSER_REQUEST_BATCHED);
-      }
-    });
-    safelyWriteNumberField(json, "rollingCountBatches", new Func0<Long>() {
-      @Override
-      public Long call() {
-        return collapserMetrics.getRollingCount(HystrixRollingNumberEvent.COLLAPSER_BATCH);
-      }
-    });
-    safelyWriteNumberField(json, "rollingCountResponsesFromCache", new Func0<Long>() {
-      @Override
-      public Long call() {
-        return collapserMetrics.getRollingCount(HystrixRollingNumberEvent.RESPONSE_FROM_CACHE);
-      }
-    });
+    safelyWriteNumberField(json, "rollingCountRequestsBatched", () -> collapserMetrics.getRollingCount(HystrixRollingNumberEvent.COLLAPSER_REQUEST_BATCHED));
+    safelyWriteNumberField(json, "rollingCountBatches", () -> collapserMetrics.getRollingCount(HystrixRollingNumberEvent.COLLAPSER_BATCH));
+    safelyWriteNumberField(json, "rollingCountResponsesFromCache", () -> collapserMetrics.getRollingCount(HystrixRollingNumberEvent.RESPONSE_FROM_CACHE));
 
     // batch size percentiles
     json.writeNumberField("batchSize_mean", collapserMetrics.getBatchSizeMean());

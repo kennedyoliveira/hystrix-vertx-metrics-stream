@@ -10,10 +10,10 @@
             "locked": "3.2.1"
         },
         "org.codehaus.jackson:jackson-core-asl": {
-            "locked": "1.9.11"
+            "locked": "1.9.13"
         },
         "org.codehaus.jackson:jackson-mapper-asl": {
-            "locked": "1.9.11"
+            "locked": "1.9.13"
         }
     },
     "compileClasspath": {
@@ -27,10 +27,10 @@
             "locked": "3.2.1"
         },
         "org.codehaus.jackson:jackson-core-asl": {
-            "locked": "1.9.11"
+            "locked": "1.9.13"
         },
         "org.codehaus.jackson:jackson-mapper-asl": {
-            "locked": "1.9.11"
+            "locked": "1.9.13"
         }
     },
     "compileOnly": {
@@ -44,10 +44,10 @@
             "locked": "3.2.1"
         },
         "org.codehaus.jackson:jackson-core-asl": {
-            "locked": "1.9.11"
+            "locked": "1.9.13"
         },
         "org.codehaus.jackson:jackson-mapper-asl": {
-            "locked": "1.9.11"
+            "locked": "1.9.13"
         }
     },
     "default": {
@@ -61,10 +61,10 @@
             "locked": "3.2.1"
         },
         "org.codehaus.jackson:jackson-core-asl": {
-            "locked": "1.9.11"
+            "locked": "1.9.13"
         },
         "org.codehaus.jackson:jackson-mapper-asl": {
-            "locked": "1.9.11"
+            "locked": "1.9.13"
         }
     },
     "findbugs": {
@@ -74,7 +74,7 @@
     },
     "pmd": {
         "net.sourceforge.pmd:pmd-java": {
-            "locked": "5.2.3"
+            "locked": "5.4.2"
         }
     },
     "runtime": {
@@ -88,10 +88,10 @@
             "locked": "3.2.1"
         },
         "org.codehaus.jackson:jackson-core-asl": {
-            "locked": "1.9.11"
+            "locked": "1.9.13"
         },
         "org.codehaus.jackson:jackson-mapper-asl": {
-            "locked": "1.9.11"
+            "locked": "1.9.13"
         }
     },
     "testCompile": {
@@ -111,10 +111,10 @@
             "locked": "4.12"
         },
         "org.codehaus.jackson:jackson-core-asl": {
-            "locked": "1.9.11"
+            "locked": "1.9.13"
         },
         "org.codehaus.jackson:jackson-mapper-asl": {
-            "locked": "1.9.11"
+            "locked": "1.9.13"
         }
     },
     "testCompileClasspath": {
@@ -134,10 +134,10 @@
             "locked": "4.12"
         },
         "org.codehaus.jackson:jackson-core-asl": {
-            "locked": "1.9.11"
+            "locked": "1.9.13"
         },
         "org.codehaus.jackson:jackson-mapper-asl": {
-            "locked": "1.9.11"
+            "locked": "1.9.13"
         }
     },
     "testCompileOnly": {
@@ -157,10 +157,10 @@
             "locked": "4.12"
         },
         "org.codehaus.jackson:jackson-core-asl": {
-            "locked": "1.9.11"
+            "locked": "1.9.13"
         },
         "org.codehaus.jackson:jackson-mapper-asl": {
-            "locked": "1.9.11"
+            "locked": "1.9.13"
         }
     },
     "testRuntime": {
@@ -180,10 +180,10 @@
             "locked": "4.12"
         },
         "org.codehaus.jackson:jackson-core-asl": {
-            "locked": "1.9.11"
+            "locked": "1.9.13"
         },
         "org.codehaus.jackson:jackson-mapper-asl": {
-            "locked": "1.9.11"
+            "locked": "1.9.13"
         }
     }
 }
