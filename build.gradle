@@ -12,6 +12,7 @@ plugins {
     id 'nebula.contacts' version '3.0.1'
     id 'nebula.info' version '3.0.3'
     id 'nebula.nebula-bintray' version '3.3.4'
+    id "org.standardout.versioneye" version '1.4.0'
 }
 
 apply plugin: 'java'
