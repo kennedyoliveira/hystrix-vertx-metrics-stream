@@ -126,13 +126,13 @@ for maven:
 <dependency>
   <groupId>com.github.kennedyoliveira</groupId>
   <artifactId>hystrix-vertx-metrics-stream</artifactId>
-  <version>1.5.1</version>
+  <version>1.5.3</version>
 </dependency>
 ```
 
 for gradle: 
 ```
-compile 'com.github.kennedyoliveira:hystrix-vertx-metrics-stream:1.5.1' 
+compile 'com.github.kennedyoliveira:hystrix-vertx-metrics-stream:1.5.3' 
 ```
 
 Then you have some ways for deploying.
