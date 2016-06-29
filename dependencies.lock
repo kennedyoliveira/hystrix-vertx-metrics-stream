@@ -4,10 +4,10 @@
             "locked": "1.5.3"
         },
         "io.vertx:vertx-core": {
-            "locked": "3.2.1"
+            "locked": "3.3.0"
         },
         "io.vertx:vertx-web": {
-            "locked": "3.2.1"
+            "locked": "3.3.0"
         },
         "org.codehaus.jackson:jackson-core-asl": {
             "locked": "1.9.13"
@@ -21,10 +21,10 @@
             "locked": "1.5.3"
         },
         "io.vertx:vertx-core": {
-            "locked": "3.2.1"
+            "locked": "3.3.0"
         },
         "io.vertx:vertx-web": {
-            "locked": "3.2.1"
+            "locked": "3.3.0"
         },
         "org.codehaus.jackson:jackson-core-asl": {
             "locked": "1.9.13"
@@ -38,10 +38,10 @@
             "locked": "1.5.3"
         },
         "io.vertx:vertx-core": {
-            "locked": "3.2.1"
+            "locked": "3.3.0"
         },
         "io.vertx:vertx-web": {
-            "locked": "3.2.1"
+            "locked": "3.3.0"
         },
         "org.codehaus.jackson:jackson-core-asl": {
             "locked": "1.9.13"
@@ -55,10 +55,10 @@
             "locked": "1.5.3"
         },
         "io.vertx:vertx-core": {
-            "locked": "3.2.1"
+            "locked": "3.3.0"
         },
         "io.vertx:vertx-web": {
-            "locked": "3.2.1"
+            "locked": "3.3.0"
         },
         "org.codehaus.jackson:jackson-core-asl": {
             "locked": "1.9.13"
@@ -74,7 +74,7 @@
     },
     "pmd": {
         "net.sourceforge.pmd:pmd-java": {
-            "locked": "5.4.2"
+            "locked": "5.5.0"
         }
     },
     "runtime": {
@@ -82,10 +82,10 @@
             "locked": "1.5.3"
         },
         "io.vertx:vertx-core": {
-            "locked": "3.2.1"
+            "locked": "3.3.0"
         },
         "io.vertx:vertx-web": {
-            "locked": "3.2.1"
+            "locked": "3.3.0"
         },
         "org.codehaus.jackson:jackson-core-asl": {
             "locked": "1.9.13"
@@ -99,13 +99,13 @@
             "locked": "1.5.3"
         },
         "io.vertx:vertx-core": {
-            "locked": "3.2.1"
+            "locked": "3.3.0"
         },
         "io.vertx:vertx-unit": {
-            "locked": "3.2.1"
+            "locked": "3.3.0"
         },
         "io.vertx:vertx-web": {
-            "locked": "3.2.1"
+            "locked": "3.3.0"
         },
         "junit:junit": {
             "locked": "4.12"
@@ -122,13 +122,13 @@
             "locked": "1.5.3"
         },
         "io.vertx:vertx-core": {
-            "locked": "3.2.1"
+            "locked": "3.3.0"
         },
         "io.vertx:vertx-unit": {
-            "locked": "3.2.1"
+            "locked": "3.3.0"
         },
         "io.vertx:vertx-web": {
-            "locked": "3.2.1"
+            "locked": "3.3.0"
         },
         "junit:junit": {
             "locked": "4.12"
@@ -145,13 +145,13 @@
             "locked": "1.5.3"
         },
         "io.vertx:vertx-core": {
-            "locked": "3.2.1"
+            "locked": "3.3.0"
         },
         "io.vertx:vertx-unit": {
-            "locked": "3.2.1"
+            "locked": "3.3.0"
         },
         "io.vertx:vertx-web": {
-            "locked": "3.2.1"
+            "locked": "3.3.0"
         },
         "junit:junit": {
             "locked": "4.12"
@@ -168,13 +168,13 @@
             "locked": "1.5.3"
         },
         "io.vertx:vertx-core": {
-            "locked": "3.2.1"
+            "locked": "3.3.0"
         },
         "io.vertx:vertx-unit": {
-            "locked": "3.2.1"
+            "locked": "3.3.0"
         },
         "io.vertx:vertx-web": {
-            "locked": "3.2.1"
+            "locked": "3.3.0"
         },
         "junit:junit": {
             "locked": "4.12"
