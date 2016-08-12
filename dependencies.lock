@@ -1,13 +1,13 @@
 {
     "compile": {
         "com.netflix.hystrix:hystrix-core": {
-            "locked": "1.5.3"
+            "locked": "1.5.4"
         },
         "io.vertx:vertx-core": {
-            "locked": "3.3.0"
+            "locked": "3.3.2"
         },
         "io.vertx:vertx-web": {
-            "locked": "3.3.0"
+            "locked": "3.3.2"
         },
         "org.codehaus.jackson:jackson-core-asl": {
             "locked": "1.9.13"
@@ -18,13 +18,13 @@
     },
     "compileClasspath": {
         "com.netflix.hystrix:hystrix-core": {
-            "locked": "1.5.3"
+            "locked": "1.5.4"
         },
         "io.vertx:vertx-core": {
-            "locked": "3.3.0"
+            "locked": "3.3.2"
         },
         "io.vertx:vertx-web": {
-            "locked": "3.3.0"
+            "locked": "3.3.2"
         },
         "org.codehaus.jackson:jackson-core-asl": {
             "locked": "1.9.13"
@@ -35,13 +35,13 @@
     },
     "compileOnly": {
         "com.netflix.hystrix:hystrix-core": {
-            "locked": "1.5.3"
+            "locked": "1.5.4"
         },
         "io.vertx:vertx-core": {
-            "locked": "3.3.0"
+            "locked": "3.3.2"
         },
         "io.vertx:vertx-web": {
-            "locked": "3.3.0"
+            "locked": "3.3.2"
         },
         "org.codehaus.jackson:jackson-core-asl": {
             "locked": "1.9.13"
@@ -52,13 +52,13 @@
     },
     "default": {
         "com.netflix.hystrix:hystrix-core": {
-            "locked": "1.5.3"
+            "locked": "1.5.4"
         },
         "io.vertx:vertx-core": {
-            "locked": "3.3.0"
+            "locked": "3.3.2"
         },
         "io.vertx:vertx-web": {
-            "locked": "3.3.0"
+            "locked": "3.3.2"
         },
         "org.codehaus.jackson:jackson-core-asl": {
             "locked": "1.9.13"
@@ -79,13 +79,13 @@
     },
     "runtime": {
         "com.netflix.hystrix:hystrix-core": {
-            "locked": "1.5.3"
+            "locked": "1.5.4"
         },
         "io.vertx:vertx-core": {
-            "locked": "3.3.0"
+            "locked": "3.3.2"
         },
         "io.vertx:vertx-web": {
-            "locked": "3.3.0"
+            "locked": "3.3.2"
         },
         "org.codehaus.jackson:jackson-core-asl": {
             "locked": "1.9.13"
@@ -96,16 +96,16 @@
     },
     "testCompile": {
         "com.netflix.hystrix:hystrix-core": {
-            "locked": "1.5.3"
+            "locked": "1.5.4"
         },
         "io.vertx:vertx-core": {
-            "locked": "3.3.0"
+            "locked": "3.3.2"
         },
         "io.vertx:vertx-unit": {
-            "locked": "3.3.0"
+            "locked": "3.3.2"
         },
         "io.vertx:vertx-web": {
-            "locked": "3.3.0"
+            "locked": "3.3.2"
         },
         "junit:junit": {
             "locked": "4.12"
@@ -119,16 +119,16 @@
     },
     "testCompileClasspath": {
         "com.netflix.hystrix:hystrix-core": {
-            "locked": "1.5.3"
+            "locked": "1.5.4"
         },
         "io.vertx:vertx-core": {
-            "locked": "3.3.0"
+            "locked": "3.3.2"
         },
         "io.vertx:vertx-unit": {
-            "locked": "3.3.0"
+            "locked": "3.3.2"
         },
         "io.vertx:vertx-web": {
-            "locked": "3.3.0"
+            "locked": "3.3.2"
         },
         "junit:junit": {
             "locked": "4.12"
@@ -142,16 +142,16 @@
     },
     "testCompileOnly": {
         "com.netflix.hystrix:hystrix-core": {
-            "locked": "1.5.3"
+            "locked": "1.5.4"
         },
         "io.vertx:vertx-core": {
-            "locked": "3.3.0"
+            "locked": "3.3.2"
         },
         "io.vertx:vertx-unit": {
-            "locked": "3.3.0"
+            "locked": "3.3.2"
         },
         "io.vertx:vertx-web": {
-            "locked": "3.3.0"
+            "locked": "3.3.2"
         },
         "junit:junit": {
             "locked": "4.12"
@@ -165,16 +165,16 @@
     },
     "testRuntime": {
         "com.netflix.hystrix:hystrix-core": {
-            "locked": "1.5.3"
+            "locked": "1.5.4"
         },
         "io.vertx:vertx-core": {
-            "locked": "3.3.0"
+            "locked": "3.3.2"
         },
         "io.vertx:vertx-unit": {
-            "locked": "3.3.0"
+            "locked": "3.3.2"
         },
         "io.vertx:vertx-web": {
-            "locked": "3.3.0"
+            "locked": "3.3.2"
         },
         "junit:junit": {
             "locked": "4.12"
