@@ -74,7 +74,7 @@
     },
     "pmd": {
         "net.sourceforge.pmd:pmd-java": {
-            "locked": "5.5.0"
+            "locked": "5.5.1"
         }
     },
     "runtime": {
