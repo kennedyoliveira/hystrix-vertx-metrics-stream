@@ -1,18 +1,18 @@
 buildscript {
-    repositories { jcenter() }
-    dependencies {
-        classpath 'com.netflix.nebula:nebula-publishing-plugin:4.9.1'
-    }
+  repositories { jcenter() }
+  dependencies {
+    classpath 'com.netflix.nebula:nebula-publishing-plugin:4.9.1'
+  }
 }
 
 plugins {
-    id 'nebula.dependency-recommender' version '3.6.3'
-    id 'nebula.dependency-lock' version '4.3.0'
-    id 'nebula.release' version '4.1.0'
-    id 'nebula.contacts' version '3.0.1'
-    id 'nebula.info' version '3.2.1'
-    id 'nebula.nebula-bintray' version '3.5.0'
-    id "org.standardout.versioneye" version '1.4.0'
+  id 'nebula.dependency-recommender' version '3.6.3'
+  id 'nebula.dependency-lock' version '4.3.0'
+  id 'nebula.release' version '4.1.0'
+  id 'nebula.contacts' version '3.0.1'
+  id 'nebula.info' version '3.2.1'
+  id 'nebula.nebula-bintray' version '3.5.0'
+  id "org.standardout.versioneye" version '1.4.0'
 }
 
 apply plugin: 'java'
@@ -31,87 +31,87 @@ group 'com.github.kennedyoliveira'
 description = 'Implementation of a Metrics Event Stream using Vert.x'
 
 pmd {
-    toolVersion = '5.5.1'
+  toolVersion = '5.5.1'
 }
 
 def recomendationsFile = rootProject.file('dependencies-version.properties')
 
 dependencyRecommendations {
-    propertiesFile file: recomendationsFile
+  propertiesFile file: recomendationsFile
 }
 
 repositories {
-    mavenCentral()
+  mavenCentral()
 }
 
 contacts {
-    'kennedy.oliveira@outlook.com' {
-        moniker 'Kennedy Oliveira'
-        github 'kennedyoliveira'
-        roles 'owner', 'developer', 'notify'
-    }
+  'kennedy.oliveira@outlook.com' {
+    moniker 'Kennedy Oliveira'
+    github 'kennedyoliveira'
+    roles 'owner', 'developer', 'notify'
+  }
 }
 
 dependencies {
-    compile 'com.netflix.hystrix:hystrix-core'
-    compile 'org.codehaus.jackson:jackson-core-asl'
-    compile 'org.codehaus.jackson:jackson-mapper-asl'
+  compile 'com.netflix.hystrix:hystrix-core'
+  compile 'com.netflix.hystrix:hystrix-serialization'
 
-    compile group: 'io.vertx', name: 'vertx-core'
-    compile group: 'io.vertx', name: 'vertx-web'
-    testCompile group: 'io.vertx', name: 'vertx-unit'
+  compile group: 'io.vertx', name: 'vertx-core'
+  compile group: 'io.vertx', name: 'vertx-rx-java'
+  compile group: 'io.vertx', name: 'vertx-web'
+  testCompile group: 'io.vertx', name: 'vertx-unit'
 
-    testCompile 'junit:junit'
+  testCompile 'junit:junit'
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.12'
+  gradleVersion = '3.1'
 }
 
 // qa plugin configuration to export html instead of xml
 tasks.withType(FindBugs) {
-    reports {
-        html.enabled = true
-        xml.enabled = false
-    }
+  reports {
+    html.enabled = true
+    xml.enabled = false
+  }
 }
 
 tasks.withType(Pmd) {
-    reports {
-        html.enabled = true
-        xml.enabled = false
-    }
+  reports {
+    html.enabled = true
+    xml.enabled = false
+  }
 }
 
 publishing {
-    publications {
-        nebula(MavenPublication) {
-            pom.withXml {
-                asNode().appendNode('licenses').appendNode('license').with {
-                    appendNode('name', 'MIT License')
-                    appendNode('url', 'https://opensource.org/licenses/MIT')
-                    appendNode('distribution', 'repo')
-                }
-            }
+  publications {
+    nebula(MavenPublication) {
+      pom.withXml {
+        asNode().appendNode('licenses').appendNode('license').with {
+          appendNode('name', 'MIT License')
+          appendNode('url', 'https://opensource.org/licenses/MIT')
+          appendNode('distribution', 'repo')
         }
+      }
     }
+  }
 }
 
 bintray {
-    pkg {
-        repo = 'maven'
-        userOrg = ''
-        licenses = ['MIT']
-        websiteUrl = 'https://github.com/kennedyoliveira/hystrix-vertx-metrics-stream'
-        issueTrackerUrl = 'https://github.com/kennedyoliveira/hystrix-vertx-metrics-stream/issues'
-        vcsUrl = 'https://github.com/kennedyoliveira/hystrix-vertx-metrics-stream.git'
-        labels = ['gradle', 'hyxtrix', 'vertx3', 'metrics-stream']
-        publicDownloadNumbers = true
-        version {
-            gpg {
-                if (project.hasProperty('bintraySignPass'))
-                    passphrase = project.property('bintraySignPass')
-            }
-        }
+  pkg {
+    repo = 'maven'
+    userOrg = ''
+    licenses = ['MIT']
+    websiteUrl = 'https://github.com/kennedyoliveira/hystrix-vertx-metrics-stream'
+    issueTrackerUrl = 'https://github.com/kennedyoliveira/hystrix-vertx-metrics-stream/issues'
+    vcsUrl = 'https://github.com/kennedyoliveira/hystrix-vertx-metrics-stream.git'
+    labels = ['gradle', 'hyxtrix', 'vertx3', 'metrics-stream']
+    publicDownloadNumbers = true
+    version {
+      gpg {
+        if (project.hasProperty('bintraySignPass'))
+          passphrase = project.property('bintraySignPass')
+      }
     }
+  }
 }
