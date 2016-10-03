@@ -41,7 +41,7 @@ public class EventMetricsStreamTest {
 
     dummyCommand.execute();
 
-    final Async request = context.async();
+    final Async request = context.async(10);
 
     vertx.createHttpClient(new HttpClientOptions().setDefaultHost("localhost")
                                                   .setDefaultPort(8099))
@@ -53,11 +53,11 @@ public class EventMetricsStreamTest {
              // received something
              context.assertTrue(buffer.length() > 0);
              System.out.println(buffer.toString(StandardCharsets.UTF_8));
-             request.complete();
+             request.countDown();
            });
          });
 
-    request.await(2000L);
+    request.await(4000L);
   }
 
   @After

@@ -37,7 +37,7 @@ public class EventMetricsStreamVerticle extends AbstractVerticle {
 
     router.route(hystrixStreamPath.get())
           .method(HttpMethod.GET)
-          .handler(EventMetricsStreamHandler.createHandler());
+          .handler(EventMetricsStreamHandler.createHandler(vertx));
 
     // creates the HttpServer to listen to
     vertx.createHttpServer()
