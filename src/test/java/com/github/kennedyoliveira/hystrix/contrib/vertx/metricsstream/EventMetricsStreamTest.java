@@ -4,6 +4,7 @@ import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import com.netflix.hystrix.HystrixCommandKey;
 import io.vertx.core.Vertx;
+import io.vertx.core.http.HttpClient;
 import io.vertx.core.http.HttpClientOptions;
 import io.vertx.ext.unit.Async;
 import io.vertx.ext.unit.TestContext;
@@ -22,10 +23,14 @@ import java.nio.charset.StandardCharsets;
 public class EventMetricsStreamTest {
 
   private Vertx vertx;
+  private HttpClient httpClient;
 
   @Before
   public void setUp(TestContext context) throws Exception {
     vertx = Vertx.vertx();
+    httpClient = vertx.createHttpClient(new HttpClientOptions().setDefaultHost("localhost")
+                                                               .setDefaultPort(8099));
+
     EventMetricsStreamHelper.deployStandaloneMetricsStream(vertx, context.asyncAssertSuccess());
   }
 
@@ -43,25 +48,27 @@ public class EventMetricsStreamTest {
 
     final Async request = context.async(10);
 
-    vertx.createHttpClient(new HttpClientOptions().setDefaultHost("localhost")
-                                                  .setDefaultPort(8099))
-         .getNow("/hystrix.stream", resp -> {
-           context.assertEquals(200, resp.statusCode());
-           context.assertEquals("text/event-stream;charset=UTF-8", resp.headers().get("Content-Type"));
+    httpClient.getNow("/hystrix.stream", resp -> {
+      context.assertEquals(200, resp.statusCode());
+      context.assertEquals("text/event-stream;charset=UTF-8", resp.headers().get("Content-Type"));
 
-           resp.handler(buffer -> {
-             // received something
-             context.assertTrue(buffer.length() > 0);
-             System.out.println(buffer.toString(StandardCharsets.UTF_8));
-             request.countDown();
-           });
-         });
+      resp.handler(buffer -> {
+        // received something
+        context.assertTrue(buffer.length() > 0);
+        System.out.println(buffer.toString(StandardCharsets.UTF_8));
+        request.countDown();
+      });
+    });
 
     request.await(4000L);
   }
 
   @After
   public void tearDown(TestContext context) throws Exception {
+    if (httpClient != null) {
+      httpClient.close();
+    }
+
     vertx.close(context.asyncAssertSuccess());
   }
 }

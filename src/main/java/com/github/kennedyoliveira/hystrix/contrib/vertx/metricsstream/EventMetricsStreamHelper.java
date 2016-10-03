@@ -3,6 +3,8 @@ package com.github.kennedyoliveira.hystrix.contrib.vertx.metricsstream;
 import io.vertx.core.*;
 import io.vertx.core.metrics.MetricsOptions;
 
+import java.util.Objects;
+
 /**
  * Helper Class with some methods to create {@link io.vertx.core.Vertx} and {@link EventMetricsStreamVerticle}
  * for easy deploy.
@@ -11,6 +13,7 @@ import io.vertx.core.metrics.MetricsOptions;
  * @since 1.5.1
  */
 public class EventMetricsStreamHelper {
+
   /**
    * Utility class, no instances for you!
    */
@@ -28,16 +31,10 @@ public class EventMetricsStreamHelper {
    * @throws NullPointerException if the {@code vertx} instance is null
    */
   public static void deployStandaloneMetricsStream(Vertx vertx, Handler<AsyncResult<String>> completionFuture) {
-    if (vertx == null)
-      throw new NullPointerException("The Vertx instance can't be null!");
+    Objects.requireNonNull(vertx, "The Vertx instance can't be null!");
 
-    final EventMetricsStreamVerticle verticle = new EventMetricsStreamVerticle();
     final DeploymentOptions options = new DeploymentOptions().setInstances(1);
-    if (completionFuture != null) {
-      vertx.deployVerticle(verticle, options, completionFuture);
-    } else {
-      vertx.deployVerticle(verticle, options);
-    }
+    vertx.deployVerticle(EventMetricsStreamVerticle.class.getName(), options, completionFuture);
   }
 
   /**
@@ -47,7 +44,9 @@ public class EventMetricsStreamHelper {
    * both behavior with Archaius properties {@code hystrix.vertx.stream.httpServer.port} and {@code hystrix.vertx.stream.httpServer.path} respectively.</p>
    */
   public static void deployStandaloneMetricsStream() {
-    final Vertx vertx = Vertx.factory.vertx(new VertxOptions().setEventLoopPoolSize(1).setMetricsOptions(new MetricsOptions().setEnabled(false)));
+    final Vertx vertx = Vertx.vertx(new VertxOptions().setEventLoopPoolSize(1)
+                                                      .setMetricsOptions(new MetricsOptions().setEnabled(false)));
+
     deployStandaloneMetricsStream(vertx, null);
   }
 }

@@ -7,6 +7,7 @@ import com.netflix.hystrix.HystrixCommandMetrics;
 import com.netflix.hystrix.HystrixThreadPoolMetrics;
 import com.netflix.hystrix.metric.consumer.HystrixDashboardStream.DashboardData;
 import com.netflix.hystrix.serial.SerialHystrixDashboardData;
+import io.netty.util.AsciiString;
 import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
 import io.vertx.core.buffer.Buffer;
@@ -77,6 +78,12 @@ public class EventMetricsStreamHandler implements Handler<RoutingContext> {
    */
   private final Scheduler scheduler;
 
+  // Netty optimized headers
+  private final static AsciiString HTTP_HEADER_PRAGMA = new AsciiString("Pragma");
+  private final static AsciiString HTTP_HEADER_PRAGMA_VALUE = new AsciiString("no-cache");
+  private final static AsciiString HTTP_CONTENT_TYPE_VALUE = new AsciiString("text/event-stream;charset=UTF-8");
+  private final static AsciiString HTTP_CACHE_CONTROL_VALUE = new AsciiString("no-cache, no-store, max-age=0, must-revalidate");
+
   private EventMetricsStreamHandler(Vertx vertx) {
     this.scheduler = RxHelper.scheduler(vertx);
   }
@@ -120,12 +127,12 @@ public class EventMetricsStreamHandler implements Handler<RoutingContext> {
    * @param response Response.
    */
   private void reportMetrics(HttpServerRequest request, HttpServerResponse response) {
-    response.setChunked(true);
-    response.setStatusCode(200);
-    response.headers()
-            .add(HttpHeaders.CONTENT_TYPE, "text/event-stream;charset=UTF-8")
-            .add(HttpHeaders.CACHE_CONTROL, "no-cache, no-store, max-age=0, must-revalidate")
-            .add("Pragma", "no-cache");
+    response.setChunked(true)
+            .setStatusCode(200)
+            .headers()
+            .add(HttpHeaders.CONTENT_TYPE, HTTP_CONTENT_TYPE_VALUE)
+            .add(HttpHeaders.CACHE_CONTROL, HTTP_CACHE_CONTROL_VALUE)
+            .add(HTTP_HEADER_PRAGMA, HTTP_HEADER_PRAGMA_VALUE);
 
     long delay = DEFAULT_DELAY;
 
