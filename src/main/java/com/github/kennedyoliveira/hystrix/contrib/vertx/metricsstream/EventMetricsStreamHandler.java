@@ -86,8 +86,8 @@ public class EventMetricsStreamHandler implements Handler<RoutingContext> {
    *
    * @param vertx Vertx instance currently running code
    * @return the new created {@link EventMetricsStreamHandler}
-   * @since 1.5.1
    * @throws NullPointerException if {@code vertx} is null.
+   * @since 1.5.1
    */
   public static EventMetricsStreamHandler createHandler(Vertx vertx) {
     Objects.requireNonNull(vertx, "Vertx instance is required.");
@@ -143,6 +143,7 @@ public class EventMetricsStreamHandler implements Handler<RoutingContext> {
                                                                                    HystrixThreadPoolMetrics.getInstances(),
                                                                                    HystrixCollapserMetrics.getInstances()))
                                                        .concatMap(dashboardData -> Observable.from(SerialHystrixDashboardData.toMultipleJsonStrings(dashboardData)))
+                                                       .onTerminateDetach()
                                                        .subscribe(metric -> writeMetric(metric, response),
                                                                   ex -> log.error("Error sending metrics", ex));
 
